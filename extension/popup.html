@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        width: 320px;
+        margin: 0;
+        padding: 15px;
+      }
+      h1 {
+        font-size: 18px;
+        margin: 0 0 15px 0;
+      }
+      form {
+        display: grid;
+        gap: 10px;
+      }
+      .error {
+        color: red;
+      }
+      .status {
+        margin-top: 10px;
+        padding: 8px;
+        border-radius: 4px;
+        text-align: center;
+        font-size: 14px;
+      }
+      .status.connected {
+        background-color: #e8f5e9;
+        color: #2e7d32;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🎬 Video Sync Watch</h1>
+
+    <form id="connection-form">
+      <label>
+        URL
+        <input
+          type="url"
+          name="wsUrl"
+          id="ws-url"
+          placeholder="wss://xxx.ngrok.io"
+          required
+        />
+      </label>
+
+      <label>
+        Access Key
+        <input
+          type="text"
+          name="accessKey"
+          id="access-key"
+          placeholder="XXXX-XXXX-XXXX"
+          pattern="[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}"
+          required
+        />
+      </label>
+      <button type="submit" id="connect-btn">Connect</button>
+    </form>
+
+    <p class="error" id="error" style="display: none"></p>
+    <div class="status connected" id="status" style="display: none">✓ Connected</div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
