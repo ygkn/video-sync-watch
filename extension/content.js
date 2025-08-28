@@ -166,7 +166,7 @@
 
       if (
         videoState.currentTime !== undefined &&
-        Math.abs(video.currentTime - videoState.currentTime) > 0.5
+        Math.abs(video.currentTime - videoState.currentTime) > 2
       ) {
         log(
           `Seeking from ${video.currentTime.toFixed(
